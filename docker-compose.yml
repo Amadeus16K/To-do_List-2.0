@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: todolist20
+    restart: always
+    environment:
+      POSTGRES_USER: Admin    
+      POSTGRES_PASSWORD: OnlyAdmin1432  
+      POSTGRES_DB: to-do_api
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
